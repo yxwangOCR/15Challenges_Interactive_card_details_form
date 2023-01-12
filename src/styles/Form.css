@@ -1,3 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+:root {
+  --LightViolet: hsl(249, 99%, 64%);
+  --DarkViolet: hsl(278, 68%, 11%);
+  --Violet: hsl(278, 94%, 30%);
+  --Red: hsl(0, 100%, 66%);
+  --White: hsl(0, 0%, 100%);
+  --LightGray: hsl(270, 3%, 87%);
+  --DarkGray: hsl(279, 6%, 55%);
+  --Font: "Space Grotesk", sans-serif;
+}
 
+body,
+html {
+  font-family: var(--Font);
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--LightViolet);
+}
+
+main {
+  width: 350px;
+  height: 565px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 992px) {
+  body,
+  html {
+    background-color: var(--Violet);
+  }
+  main {
+    width: 800px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+  }
+}
+form {
+  width: 100%;
+  height: 70%;
+  background-color: var(--White);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3em 0;
+}
+form label {
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 992px) {
+  form {
+    width: 70%;
+    height: 100%;
+    background-color: var(--White);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10em;
+  }
+}
 
 /*# sourceMappingURL=Form.css.map */

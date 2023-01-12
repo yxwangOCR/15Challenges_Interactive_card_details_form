@@ -1,12 +1,13 @@
 import Hero from "./components/Hero";
 import Form from "./components/Form";
+import "../src/styles/General.css";
 
 function App() {
   return (
-    <div className="App">
+    <main>
       <Hero />
       <Form />
-    </div>
+    </main>
   );
 }
 

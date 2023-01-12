@@ -1,0 +1,13 @@
+@import "General.scss";
+form {
+  @include FormSection(100%, 70%, var(--White), column, center, 3em 0);
+  label {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  form {
+    @include FormSection(70%, 100%, var(--White), column, center, 0 10em);
+  }
+}

@@ -1,0 +1,23 @@
+@import "General.scss";
+
+section {
+  @include HeroSection(100%, 30%, "../images/bg-main-mobile.png");
+  :nth-child(1) {
+    @include cardPositions(205px, 110px, relative, 15%, -37%);
+  }
+  :nth-child(2) {
+    @include cardPositions(205px, 110px, relative, -16%, -4%);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  section {
+    @include HeroSection(30%, 100%, "../images/bg-main-desktop.png");
+    :nth-child(1) {
+      @include cardPositions(205px, 110px, relative, 50%, -60%);
+    }
+    :nth-child(2) {
+      @include cardPositions(205px, 110px, relative, 0%, -40%);
+    }
+  }
+}
