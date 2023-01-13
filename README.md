@@ -21,6 +21,7 @@ Users should be able to:
 - Mobile-first workflow
 - Sass
 - [React](https://reactjs.org/) - JS library
+- [React Hook Form](https://react-hook-form.com/)
 
 ## Design
 
