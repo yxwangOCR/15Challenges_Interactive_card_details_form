@@ -1,4 +1,5 @@
 @import "General.scss";
+
 form {
   @include FormSection(100%, 400px, var(--White), column, center, 3em 0);
 

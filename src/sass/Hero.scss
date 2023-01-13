@@ -1,5 +1,6 @@
 @import "General.scss";
 
+
 section {
   @include HeroSection(100%, 200px, "../images/bg-main-mobile.png");
   :nth-child(1) {

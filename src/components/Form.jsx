@@ -1,7 +1,6 @@
-import React from "react";
 import "../styles/Form.css";
 
-const Form = () => {
+const Form = (e) => {
   return (
     <form>
       <div>

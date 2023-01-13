@@ -1,43 +1,29 @@
 @import "General.scss";
 
-.card-detail {
+.card {
   color: var(--White);
-  .card-content {
-    position: relative;
-    top: -46%;
-    right: 0;
+  .card__logo {
+    @include cardPositions(30px, 16px, relative, 12%, -16px);
+  }
+  .card__content {
+    @include position(relative, -46%, 0);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     span {
-      position: relative;
-      top: 86%;
-      right: -9%;
+      @include position(relative, 86%, -9%);
       font-size: 0.8rem;
     }
-    .card-name {
-      position: relative;
-      top: 10%;
-      right: 0;
+    div {
+      @include position(relative, 10%, 0);
       display: flex;
-      gap: 4em;
       justify-content: space-between;
+      gap: 4em;
       span {
         font-size: 0.4rem;
       }
     }
   }
-
-  .card-logo {
-    width: 30px;
-    height: 16px;
-    position: relative;
-    top: 12%;
-    right: -16px;
-  }
-}
-
-@media screen and (min-width: 992px) {
 }

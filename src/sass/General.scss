@@ -87,6 +87,12 @@ $Font: "Space Grotesk", sans-serif;
   cursor: $cursor;
 }
 
+@mixin position($position, $top, $right) {
+  position: $position;
+  top: $top;
+  right: $right;
+}
+
 // By default :
 body,
 html {

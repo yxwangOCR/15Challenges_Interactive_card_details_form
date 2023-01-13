@@ -42,10 +42,17 @@ main {
     flex-direction: row;
   }
 }
-.card-detail {
+.card {
   color: var(--White);
 }
-.card-detail .card-content {
+.card .card__logo {
+  width: 30px;
+  height: 16px;
+  position: relative;
+  top: 12%;
+  right: -16px;
+}
+.card .card__content {
   position: relative;
   top: -46%;
   right: 0;
@@ -54,29 +61,22 @@ main {
   justify-content: center;
   align-items: center;
 }
-.card-detail .card-content span {
+.card .card__content span {
   position: relative;
   top: 86%;
   right: -9%;
   font-size: 0.8rem;
 }
-.card-detail .card-content .card-name {
+.card .card__content div {
   position: relative;
   top: 10%;
   right: 0;
   display: flex;
-  gap: 4em;
   justify-content: space-between;
+  gap: 4em;
 }
-.card-detail .card-content .card-name span {
+.card .card__content div span {
   font-size: 0.4rem;
-}
-.card-detail .card-logo {
-  width: 30px;
-  height: 16px;
-  position: relative;
-  top: 12%;
-  right: -16px;
 }
 
 /*# sourceMappingURL=Card.css.map */
