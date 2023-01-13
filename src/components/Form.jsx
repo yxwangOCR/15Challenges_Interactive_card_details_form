@@ -1,40 +1,123 @@
 import "../styles/Form.css";
+import { useForm } from "react-hook-form";
 
-const Form = (e) => {
+const Form = () => {
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    setError,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
   return (
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div>
         <label htmlFor=''>CARDHOLDER NAME</label>
-        <input type='text' placeholder='e.g. Jane Appleseed' />
-        <span>Please enter your full name</span>
+        <input
+          type='text'
+          placeholder='e.g. Jane Appleseed'
+          {...register(
+            "cardName",
+            { required: true },
+            { pattern: /^[A-Za-z]+$/i }
+          )}
+        />
+        {errors.cardName && <span>Please enter your full name</span>}
       </div>
 
       <div>
         <label htmlFor=''>CARD NUMBER</label>
-        <input type='text' placeholder='e.g. 1234 5678 9123 0000' />
-        <span>Wrong format, numbers only</span>
+        <input
+          {...register("cardNumber", {
+            required: { value: true, message: "Card number is required" },
+            maxLength: {
+              value: 16,
+              message: "Card number may not exceed 16 characters",
+            },
+            minLength: {
+              value: 16,
+              message: "Card number may not be less than 16 characters",
+            },
+            pattern: {
+              value: /^[\d+\s]*$/,
+              message: "Card number may only contain digits and spaces",
+            },
+          })}
+          type='number'
+          placeholder='e.g. 1234 5678 9123 0000'
+          id='cardNumber'
+        />
+        {errors.cardNumber && <span>{errors.cardNumber.message}</span>}
       </div>
 
       <div className='date-cvc'>
         <div>
           <label htmlFor=''>EXP. DATE (MM/YY)</label>
           <div className='date'>
-            <input type='text' placeholder='MM' />
-            <input type='text' placeholder='YY' />
+            <input
+              type='number'
+              placeholder='MM'
+              {...register("month", {
+                min: { value: 1, message: "Month must be between 1 and 12" },
+                max: { value: 12, message: "Month must be between 1 and 12" },
+                required: { value: true, message: "Month can't be blank" },
+                maxLength: {
+                  value: 2,
+                  message: "Month cannot exceed 2 numbers",
+                },
+                minLength: {
+                  value: 2,
+                  message: "Month cannot be less than 2 numbers",
+                },
+              })}
+            />
+            <input
+              type='number'
+              placeholder='YY'
+              {...register("year", {
+                required: { value: true, message: "Year can't be blank" },
+                maxLength: {
+                  value: 2,
+                  message: "Year cannot exceed 2 numbers",
+                },
+                minLength: {
+                  value: 2,
+                  message: "Year cannot be less than 2 numbers",
+                },
+              })}
+            />
           </div>
-          <span>Can't be blank</span>
+          {(errors.month && <span>{errors.month.message}</span>) ||
+            (errors.year && <span>{errors.year.message}</span>)}
         </div>
 
         <div>
           <label htmlFor=''>CVC</label>
-          <input type='text' placeholder='e.g. 123' />
-          <span>Can't be blank</span>
+          <input
+            type='number'
+            placeholder='e.g. 123'
+            {...register("cvc", {
+              required: { value: true, message: "CVC can't be blank" },
+              maxLength: {
+                value: 3,
+                message: "CVC cannot exceed 3 numbers",
+              },
+              minLength: {
+                value: 3,
+                message: "CVC cannot be less than 3 numbers",
+              },
+            })}
+          />
+          {errors.cvc && <span>{errors.cvc.message}</span>}
         </div>
       </div>
 
-      <button>Confirm</button>
+      <button type='sumbit'>Confirm</button>
     </form>
   );
 };
 
 export default Form;
+
+//   {errors.cardNumber && <span>{errors.cardNumber.message}</span>}
