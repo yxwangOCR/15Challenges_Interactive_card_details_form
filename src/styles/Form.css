@@ -25,7 +25,7 @@ html {
 
 main {
   width: 350px;
-  height: 565px;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -44,15 +44,73 @@ main {
 }
 form {
   width: 100%;
-  height: 70%;
+  height: 400px;
   background-color: var(--White);
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 3em 0;
 }
-form label {
+form div {
+  display: flex;
+  flex-direction: column;
+  height: 5em;
+}
+form div label {
+  font-size: 0.7rem;
+  color: var(--DarkViolet);
+  margin: 0 1em 0.5em 1em;
+}
+form div input {
+  border: 1px solid var(--LightGray);
+  border-radius: 8px;
+  padding: 0.8em;
+  margin: 0 1em;
+}
+form div input::placeholder {
+  color: var(--LightGray);
+  letter-spacing: 1px;
+}
+form div span {
+  color: var(--DarkViolet);
+  font-size: 0.7rem;
+  display: none;
+  margin: 0.5em 1em 0 1em;
+  color: var(--Red);
+}
+form .date-cvc {
+  display: flex;
+  flex-direction: row;
+}
+form .date-cvc .date {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+}
+form .date-cvc .date input {
+  width: 50%;
+}
+form .date-cvc .date :nth-child(1) {
+  margin: 0 0.5em 0 1em;
+}
+form .date-cvc .date :nth-child(2) {
+  margin: 0 0.5em 0 0;
+}
+form button {
+  width: 93%;
+  height: 3em;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--DarkViolet);
+  color: var(--White);
   font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin: 1em auto;
+  cursor: pointer;
+}
+form button:hover {
+  background-color: var(--LightViolet);
 }
 
 @media screen and (min-width: 992px) {
@@ -63,7 +121,10 @@ form label {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 10em;
+    padding: 0 7em;
+  }
+  form button:hover {
+    background-color: var(--Violet);
   }
 }
 

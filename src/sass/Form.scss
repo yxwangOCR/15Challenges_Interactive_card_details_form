@@ -1,13 +1,81 @@
 @import "General.scss";
 form {
-  @include FormSection(100%, 70%, var(--White), column, center, 3em 0);
-  label {
-    font-size: 0.8rem;
+  @include FormSection(100%, 400px, var(--White), column, center, 3em 0);
+
+  div {
+    display: flex;
+    flex-direction: column;
+    height: 5em;
+
+    label {
+      font-size: 0.7rem;
+      color: var(--DarkViolet);
+      margin: 0 1em 0.5em 1em;
+    }
+    input {
+      border: 1px solid var(--LightGray);
+      border-radius: 8px;
+      padding: 0.8em;
+      margin: 0 1em;
+      &::placeholder {
+        color: var(--LightGray);
+        letter-spacing: 1px;
+      }
+    }
+    span {
+      color: var(--DarkViolet);
+      font-size: 0.7rem;
+      display: none;
+      margin: 0.5em 1em 0 1em;
+      color: var(--Red);
+    }
+  }
+  .date-cvc {
+    display: flex;
+    flex-direction: row;
+    .date {
+      display: flex;
+      flex-direction: row;
+      height: auto;
+
+      input {
+        width: 50%;
+      }
+      :nth-child(1) {
+        margin: 0 0.5em 0 1em;
+      }
+      :nth-child(2) {
+        margin: 0 0.5em 0 0;
+      }
+    }
+  }
+  button {
+    @include buttonStyle(
+      93%,
+      3em,
+      none,
+      8px,
+      var(--DarkViolet),
+      var(--White),
+      0.8rem,
+      500,
+      2px,
+      1em auto,
+      pointer
+    );
+    &:hover {
+      background-color: var(--LightViolet);
+    }
   }
 }
 
 @media screen and (min-width: 992px) {
   form {
-    @include FormSection(70%, 100%, var(--White), column, center, 0 10em);
+    @include FormSection(70%, 100%, var(--White), column, center, 0 7em);
+    button {
+      &:hover {
+        background-color: var(--Violet);
+      }
+    }
   }
 }

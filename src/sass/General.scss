@@ -61,6 +61,32 @@ $Font: "Space Grotesk", sans-serif;
   padding: $padding;
 }
 
+@mixin buttonStyle(
+  $width,
+  $height,
+  $border,
+  $borderRadius,
+  $background,
+  $color,
+  $fontSize,
+  $fontWeight,
+  $letterSpacing,
+  $margin,
+  $cursor
+) {
+  width: $width;
+  height: $height;
+  border: $border;
+  border-radius: $borderRadius;
+  background-color: $background;
+  color: $color;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  letter-spacing: $letterSpacing;
+  margin: $margin;
+  cursor: $cursor;
+}
+
 // By default :
 body,
 html {
@@ -76,7 +102,7 @@ html {
 }
 
 main {
-  @include mainContainer(350px, 565px, column);
+  @include mainContainer(350px, 100%, column);
 }
 
 // For screens larger than 992px :
