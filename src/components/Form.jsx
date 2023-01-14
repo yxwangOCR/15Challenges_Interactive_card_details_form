@@ -13,40 +13,46 @@ const Form = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <label htmlFor=''>CARDHOLDER NAME</label>
+        <label htmlFor='cardName'>CARDHOLDER NAME</label>
         <input
           type='text'
           placeholder='e.g. Jane Appleseed'
-          {...register(
-            "cardName",
-            { required: true },
-            { pattern: /^[A-Za-z]+$/i }
-          )}
+          {...register("cardName", { required: "Please enter your full name" })}
         />
-        {errors.cardName && <span>Please enter your full name</span>}
+        {errors.cardName && <span>{errors.cardName.message}</span>}
       </div>
 
       <div>
-        <label htmlFor=''>CARD NUMBER</label>
+        <label htmlFor='cardNumber'>CARD NUMBER</label>
         <input
           {...register("cardNumber", {
             required: { value: true, message: "Card number is required" },
-            maxLength: {
-              value: 16,
-              message: "Card number may not exceed 16 characters",
-            },
             minLength: {
-              value: 16,
-              message: "Card number may not be less than 16 characters",
+              value: 19,
+              message: "Card number may not be less than 16 numbers",
             },
             pattern: {
               value: /^[\d+\s]*$/,
               message: "Card number may only contain digits and spaces",
             },
           })}
-          type='number'
+          type='tel'
+          inputMode='numeric'
+          autoComplete='cc-number'
+          name='cardNumber'
           placeholder='e.g. 1234 5678 9123 0000'
           id='cardNumber'
+          onChange={(e) => {
+            const { value } = e.target;
+            const cardNumber =
+              value
+                .replace(/\s/g, "")
+                .match(/.{1,4}/g)
+                ?.join(" ")
+                .substr(0, 19) || "";
+
+            setValue("cardNumber", cardNumber, { shouldValidate: true });
+          }}
         />
         {errors.cardNumber && <span>{errors.cardNumber.message}</span>}
       </div>
@@ -56,7 +62,7 @@ const Form = () => {
           <label htmlFor=''>EXP. DATE (MM/YY)</label>
           <div className='date'>
             <input
-              type='number'
+              type='tel'
               placeholder='MM'
               {...register("month", {
                 min: { value: 1, message: "Month must be between 1 and 12" },
@@ -73,7 +79,7 @@ const Form = () => {
               })}
             />
             <input
-              type='number'
+              type='tel'
               placeholder='YY'
               {...register("year", {
                 required: { value: true, message: "Year can't be blank" },
@@ -95,7 +101,7 @@ const Form = () => {
         <div>
           <label htmlFor=''>CVC</label>
           <input
-            type='number'
+            type='tel'
             placeholder='e.g. 123'
             {...register("cvc", {
               required: { value: true, message: "CVC can't be blank" },
@@ -119,5 +125,3 @@ const Form = () => {
 };
 
 export default Form;
-
-//   {errors.cardNumber && <span>{errors.cardNumber.message}</span>}
