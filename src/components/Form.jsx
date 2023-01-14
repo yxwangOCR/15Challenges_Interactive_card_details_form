@@ -1,5 +1,7 @@
 import "../styles/Form.css";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
+import Success from "./Success";
+import { useState } from "react";
 
 const Form = () => {
   const {
@@ -9,9 +11,22 @@ const Form = () => {
     setError,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
-  return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+  const onSubmit = (data, event) => {
+    console.log("data", data);
+    console.log("event", event);
+    setIsSubmitted(true);
+  };
+
+  const onError = (errors, event) => {
+    console.log("errors", errors);
+    console.log("event", event);
+  };
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  return isSubmitted ? (
+    <Success />
+  ) : (
+    <form onSubmit={handleSubmit(onSubmit, onError)}>
       <div>
         <label htmlFor='cardName'>CARDHOLDER NAME</label>
         <input
@@ -32,9 +47,9 @@ const Form = () => {
               message: "Card number may not be less than 16 numbers",
             },
             /*pattern: {
-              value: /^[\d+\s]*$/,
-              message: "Card number may only contain digits and spaces",
-            },*/
+            value: /^[\d+\s]*$/,
+            message: "Card number may only contain digits and spaces",
+          },*/
           })}
           type='tel'
           inputMode='numeric'
