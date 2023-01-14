@@ -31,10 +31,10 @@ const Form = () => {
               value: 19,
               message: "Card number may not be less than 16 numbers",
             },
-            pattern: {
+            /*pattern: {
               value: /^[\d+\s]*$/,
               message: "Card number may only contain digits and spaces",
-            },
+            },*/
           })}
           type='tel'
           inputMode='numeric'
@@ -49,7 +49,7 @@ const Form = () => {
                 .replace(/\s/g, "")
                 .match(/.{1,4}/g)
                 ?.join(" ")
-                .substr(0, 19) || "";
+                .slice(0, 19) || "";
 
             setValue("cardNumber", cardNumber, { shouldValidate: true });
           }}
