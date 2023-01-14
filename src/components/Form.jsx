@@ -53,7 +53,6 @@ const Form = () => {
           })}
           type='tel'
           inputMode='numeric'
-          autoComplete='cc-number'
           name='cardNumber'
           placeholder='e.g. 1234 5678 9123 0000'
           id='cardNumber'
@@ -74,9 +73,10 @@ const Form = () => {
 
       <div className='date-cvc'>
         <div>
-          <label htmlFor=''>EXP. DATE (MM/YY)</label>
+          <label htmlFor='month'>EXP. DATE (MM/YY)</label>
           <div className='date'>
             <input
+              id='month'
               type='tel'
               placeholder='MM'
               {...register("month", {
@@ -114,8 +114,9 @@ const Form = () => {
         </div>
 
         <div>
-          <label htmlFor=''>CVC</label>
+          <label htmlFor='cvc'>CVC</label>
           <input
+            id='cvc'
             type='tel'
             placeholder='e.g. 123'
             {...register("cvc", {
@@ -134,7 +135,7 @@ const Form = () => {
         </div>
       </div>
 
-      <button type='sumbit'>Confirm</button>
+      <button type='submit'>Confirm</button>
     </form>
   );
 };
