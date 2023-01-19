@@ -1,5 +1,5 @@
 import "../styles/Form.css";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import Success from "./Success";
 import { useState } from "react";
 
@@ -8,7 +8,6 @@ const Form = () => {
     register,
     handleSubmit,
     setValue,
-    setError,
     formState: { errors },
   } = useForm();
   const onSubmit = (data, event) => {
