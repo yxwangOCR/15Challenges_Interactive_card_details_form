@@ -73,7 +73,7 @@ const Form = () => {
 
       <div className='date-cvc'>
         <div>
-          <label htmlFor='month'>EXP. DATE (MM/YY)</label>
+          <label htmlFor='month'>EXP. DATE </label>
           <div className='date'>
             <input
               id='month'
@@ -92,8 +92,10 @@ const Form = () => {
                   message: "Month cannot be less than 2 numbers",
                 },
               })}
-            />
-            <input
+              />
+            <label htmlFor="year" className="sr-only"></label>
+              <input
+              id='year'
               type='tel'
               placeholder='YY'
               {...register("year", {

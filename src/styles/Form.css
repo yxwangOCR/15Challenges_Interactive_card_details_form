@@ -51,7 +51,6 @@ form {
   justify-content: center;
   padding: 3em 0;
   height: 22em;
-  background-color: yellow;
 }
 form div {
   display: flex;
@@ -83,7 +82,6 @@ form .date-cvc {
   display: flex;
   flex-direction: row;
   min-height: 5em;
-  background-color: lightblue;
 }
 form .date-cvc .date {
   display: flex;

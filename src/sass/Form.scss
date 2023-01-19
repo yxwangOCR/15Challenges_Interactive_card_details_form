@@ -3,8 +3,7 @@
 form {
   @include FormSection(100%, 400px, var(--White), column, center, 3em 0);
   height: 22em;
-  background-color: yellow;
-
+ 
   div {
     display: flex;
     flex-direction: column;
@@ -40,8 +39,7 @@ form {
   .date-cvc {
     display: flex;
     flex-direction: row;
-     min-height: 5em;
-    background-color: lightblue;
+    min-height: 5em;
 
     .date {
       display: flex;
