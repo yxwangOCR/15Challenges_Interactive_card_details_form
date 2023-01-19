@@ -50,11 +50,13 @@ form {
   flex-direction: column;
   justify-content: center;
   padding: 3em 0;
+  height: 22em;
+  background-color: yellow;
 }
 form div {
   display: flex;
   flex-direction: column;
-  height: 5em;
+  min-height: 5em;
 }
 form div label {
   font-size: 0.7rem;
@@ -80,11 +82,13 @@ form div span {
 form .date-cvc {
   display: flex;
   flex-direction: row;
+  min-height: 5em;
+  background-color: lightblue;
 }
 form .date-cvc .date {
   display: flex;
   flex-direction: row;
-  height: auto;
+  min-height: 2em;
 }
 form .date-cvc .date input {
   width: 50%;
@@ -105,7 +109,7 @@ form button {
   font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 2px;
-  margin: 1em auto;
+  margin: 2em auto;
   cursor: pointer;
 }
 form button:hover {

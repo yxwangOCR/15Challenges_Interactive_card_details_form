@@ -2,11 +2,16 @@
 
 form {
   @include FormSection(100%, 400px, var(--White), column, center, 3em 0);
+  height: 22em;
+  background-color: yellow;
 
   div {
     display: flex;
     flex-direction: column;
-    height: 5em;
+    min-height: 5em;
+  
+   
+
 
     label {
       font-size: 0.7rem;
@@ -18,6 +23,7 @@ form {
       border-radius: 8px;
       padding: 0.8em;
       margin: 0 1em;
+     
       &::placeholder {
         color: var(--LightGray);
         letter-spacing: 1px;
@@ -26,18 +32,21 @@ form {
     span {
       color: var(--DarkViolet);
       font-size: 0.7rem;
-
       margin: 0.5em 1em 0 1em;
       color: var(--Red);
+      
     }
   }
   .date-cvc {
     display: flex;
     flex-direction: row;
+     min-height: 5em;
+    background-color: lightblue;
+
     .date {
       display: flex;
       flex-direction: row;
-      height: auto;
+       min-height: 2em;
 
       input {
         width: 50%;
@@ -61,7 +70,7 @@ form {
       0.8rem,
       500,
       2px,
-      1em auto,
+      2em auto,
       pointer
     );
     &:hover {
