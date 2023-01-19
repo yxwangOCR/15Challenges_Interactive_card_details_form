@@ -72,7 +72,7 @@ const Form = () => {
 
       <div className='date-cvc'>
         <div>
-          <label htmlFor='month'>EXP. DATE </label>
+            <label htmlFor='month'>EXP. DATE </label>
           <div className='date'>
             <input
               id='month'
@@ -92,7 +92,6 @@ const Form = () => {
                 },
               })}
               />
-            <label htmlFor="year" className="sr-only"></label>
               <input
               id='year'
               type='tel'

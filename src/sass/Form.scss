@@ -2,15 +2,11 @@
 
 form {
   @include FormSection(100%, 400px, var(--White), column, center, 3em 0);
-  height: 22em;
- 
+  
   div {
     display: flex;
     flex-direction: column;
     min-height: 5em;
-  
-   
-
 
     label {
       font-size: 0.7rem;
@@ -39,12 +35,12 @@ form {
   .date-cvc {
     display: flex;
     flex-direction: row;
-    min-height: 5em;
+    min-height: 6em;
 
     .date {
       display: flex;
       flex-direction: row;
-       min-height: 2em;
+      min-height: 2em;
 
       input {
         width: 50%;
@@ -68,7 +64,7 @@ form {
       0.8rem,
       500,
       2px,
-      2em auto,
+      1em auto,
       pointer
     );
     &:hover {
