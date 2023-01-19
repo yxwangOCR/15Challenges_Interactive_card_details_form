@@ -28,7 +28,8 @@ const Form = () => {
     <form onSubmit={handleSubmit(onSubmit, onError)}>
       <div>
         <label htmlFor='cardName'>CARDHOLDER NAME</label>
-        <input
+          <input
+          id='cardName'
           type='text'
           placeholder='e.g. Jane Appleseed'
           {...register("cardName", { required: "Please enter your full name" })}
