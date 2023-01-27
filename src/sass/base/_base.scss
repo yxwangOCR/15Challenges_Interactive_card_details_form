@@ -1,0 +1,20 @@
+@use "../abstracts" as *;
+
+// By default :
+body,
+html {
+  font-family: var(--Font);
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--LightViolet);
+}
+
+
+main {
+  @include main-container(350px, 100%, column);
+}

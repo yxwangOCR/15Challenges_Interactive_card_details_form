@@ -1,0 +1,30 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+section {
+  @include hero-container(100%, 200px, "../images/bg-main-mobile.png");
+  :nth-child(1) {
+    @include card-position(205px, 110px, relative, 26%, -37%);
+  }
+  :nth-child(2) {
+    @include card-position(205px, 110px, relative, 0, -4%);
+  }
+  :nth-child(3) {
+    @include card-position(205px, 110px, relative, -57%, -4%);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  section {
+    @include hero-container(30%, 100%, "../images/bg-main-desktop.png");
+    :nth-child(1) {
+      @include card-position(205px, 110px, relative, 50%, -50%);
+    }
+    :nth-child(2) {
+      @include card-position(205px, 110px, relative, 0%, -25%);
+    }
+    :nth-child(3) {
+      @include card-position(205px, 110px, relative, -23%, -25%);
+    }
+  }
+}

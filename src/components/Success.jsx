@@ -1,6 +1,5 @@
-import React from "react";
+import "../styles/style.css";
 import CompleteIcon from "../images/icon-complete.svg";
-import "../styles/Success.css";
 
 const Success = () => {
   return (

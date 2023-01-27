@@ -1,5 +1,5 @@
+import "../styles/style.css";
 import React from "react";
-import "../styles/Hero.css";
 import CardBack from "../images/bg-card-back.png";
 import CardFront from "../images/bg-card-front.png";
 import Card from "./Card";

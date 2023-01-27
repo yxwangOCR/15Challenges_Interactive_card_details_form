@@ -1,0 +1,72 @@
+@use "./variables";
+
+// Mixins :
+@mixin main-container($width, $height, $direction) {
+    width: $width;
+    height: $height;
+    display: flex;
+    flex-direction: $direction;
+  }
+  
+  @mixin card-position($width, $height, $position, $top, $right) {
+    width: $width;
+    height: $height;
+    position: $position;
+    top: $top;
+    right: $right;
+  }
+  
+  @mixin hero-container($width, $height, $backgroundURL) {
+    width: $width;
+    height: $height;
+    background: url($backgroundURL) no-repeat;
+  }
+  
+  @mixin form-container(
+    $width,
+    $height,
+    $background,
+    $direction,
+    $justify,
+    $padding
+  ) {
+    width: $width;
+    height: $height;
+    background-color: $background;
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    padding: $padding;
+  }
+  
+  @mixin button-style(
+    $width,
+    $height,
+    $border,
+    $borderRadius,
+    $background,
+    $color,
+    $fontSize,
+    $fontWeight,
+    $letterSpacing,
+    $margin,
+    $cursor
+  ) {
+    width: $width;
+    height: $height;
+    border: $border;
+    border-radius: $borderRadius;
+    background-color: $background;
+    color: $color;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    letter-spacing: $letterSpacing;
+    margin: $margin;
+    cursor: $cursor;
+  }
+  
+  @mixin relative-position($position, $top, $right) {
+    position: $position;
+    top: $top;
+    right: $right;
+  }

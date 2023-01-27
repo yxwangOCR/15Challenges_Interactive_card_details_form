@@ -1,4 +1,4 @@
-import "../styles/Form.css";
+import "../styles/style.css";
 import { useForm } from "react-hook-form";
 import Success from "./Success";
 import { useState } from "react";

@@ -1,6 +1,6 @@
+import "../styles/style.css";
 import React from "react";
 import CardLogo from "../images/card-logo.svg";
-import "../styles/Card.css";
 
 const Card = () => {
   return (

@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+
+// For screens larger than 992px :
+@media screen and (min-width: 992px) {
+    body,
+    html {
+      background-color: var(--Violet);
+    }
+    
+    main {
+      @include main-container(800px, 500px, row);
+    }
+    
+  }
+  

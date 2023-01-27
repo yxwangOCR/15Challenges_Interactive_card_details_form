@@ -1,7 +1,8 @@
-@import "General.scss";
+@use "../abstracts" as *;
+@use "../base" as *;
 
 form {
-  @include FormSection(100%, 400px, var(--White), column, center, 3em 0);
+  @include form-container(100%, 400px, var(--White), column, center, 3em 0);
   
   div {
     display: flex;
@@ -54,7 +55,7 @@ form {
     }
   }
   button {
-    @include buttonStyle(
+    @include button-style(
       93%,
       3em,
       none,
@@ -75,7 +76,7 @@ form {
 
 @media screen and (min-width: 992px) {
   form {
-    @include FormSection(70%, 100%, var(--White), column, center, 0 7em);
+    @include form-container(70%, 100%, var(--White), column, center, 0 7em);
     button {
       &:hover {
         background-color: var(--Violet);
