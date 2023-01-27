@@ -16,10 +16,10 @@
     right: $right;
   }
   
-  @mixin hero-container($width, $height, $backgroundURL) {
+  @mixin hero-container($width, $height, $background-url) {
     width: $width;
     height: $height;
-    background: url($backgroundURL) no-repeat;
+    background: url($background-url) no-repeat;
   }
   
   @mixin form-container(
@@ -43,24 +43,24 @@
     $width,
     $height,
     $border,
-    $borderRadius,
+    $border-radius,
     $background,
     $color,
-    $fontSize,
-    $fontWeight,
-    $letterSpacing,
+    $font-size,
+    $font-weight,
+    $letter-spacing,
     $margin,
     $cursor
   ) {
     width: $width;
     height: $height;
     border: $border;
-    border-radius: $borderRadius;
+    border-radius: $border-radius;
     background-color: $background;
     color: $color;
-    font-size: $fontSize;
-    font-weight: $fontWeight;
-    letter-spacing: $letterSpacing;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    letter-spacing: $letter-spacing;
     margin: $margin;
     cursor: $cursor;
   }
