@@ -53,7 +53,7 @@ form {
       }
     }
   }
-  
+
   button {
     @include button-style(
       93%,
@@ -70,17 +70,15 @@ form {
     );
     &:hover {
       background-color: $light-violet;
-    }
-  }
-}
-
-@media screen and (min-width: 992px) {
-  form {
-    @include form-container(70%, 100%, $white, column, center, 0 7em);
-    button {
-      &:hover {
+      @include medium{
         background-color: $violet;
       }
     }
+   
+  }
+
+  @include medium {
+    @include form-container(70%, 100%, $white, column, center, 0 7em);
   }
 }
+

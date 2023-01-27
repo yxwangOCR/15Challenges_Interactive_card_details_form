@@ -1,18 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
-:root {
-  --LightViolet: hsl(249, 99%, 64%);
-  --DarkViolet: hsl(278, 68%, 11%);
-  --Violet: hsl(278, 94%, 30%);
-  --Red: hsl(0, 100%, 66%);
-  --White: hsl(0, 0%, 100%);
-  --LightGray: hsl(270, 3%, 87%);
-  --DarkGray: hsl(279, 6%, 55%);
-  --Font: "Space Grotesk", sans-serif;
-}
-
 body,
 html {
-  font-family: var(--Font);
+  font-family: "Space Grotesk", sans-serif;
   font-size: 18px;
   margin: 0;
   padding: 0;
@@ -20,7 +9,13 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--LightViolet);
+  background-color: hsl(249deg, 99%, 64%);
+}
+@media (min-width: 992px) {
+  body,
+  html {
+    background-color: hsl(278deg, 94%, 30%);
+  }
 }
 
 main {
@@ -29,12 +24,7 @@ main {
   display: flex;
   flex-direction: column;
 }
-
-@media screen and (min-width: 992px) {
-  body,
-  html {
-    background-color: var(--Violet);
-  }
+@media (min-width: 992px) {
   main {
     width: 800px;
     height: 500px;
@@ -42,8 +32,9 @@ main {
     flex-direction: row;
   }
 }
+
 .card {
-  color: var(--White);
+  color: hsl(0deg, 0%, 100%);
 }
 .card .card__logo {
   width: 30px;
@@ -83,7 +74,7 @@ main {
 form {
   width: 100%;
   height: 400px;
-  background-color: var(--White);
+  background-color: hsl(0deg, 0%, 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -96,24 +87,23 @@ form div {
 }
 form div label {
   font-size: 0.7rem;
-  color: var(--DarkViolet);
+  color: hsl(278deg, 68%, 11%);
   margin: 0 1em 0.5em 1em;
 }
 form div input {
-  border: 1px solid var(--LightGray);
+  border: 1px solid hsl(270deg, 3%, 87%);
   border-radius: 8px;
   padding: 0.8em;
   margin: 0 1em;
 }
 form div input::placeholder {
-  color: var(--LightGray);
+  color: hsl(270deg, 3%, 87%);
   letter-spacing: 1px;
 }
 form div span {
-  color: var(--DarkViolet);
   font-size: 0.7rem;
   margin: 0.5em 1em 0 1em;
-  color: var(--Red);
+  color: hsl(0deg, 100%, 66%);
 }
 form .date-cvc {
   display: flex;
@@ -139,8 +129,8 @@ form button {
   height: 3em;
   border: none;
   border-radius: 8px;
-  background-color: var(--DarkViolet);
-  color: var(--White);
+  background-color: hsl(278deg, 68%, 11%);
+  color: hsl(0deg, 0%, 100%);
   font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 2px;
@@ -148,23 +138,25 @@ form button {
   cursor: pointer;
 }
 form button:hover {
-  background-color: var(--LightViolet);
+  background-color: hsl(249deg, 99%, 64%);
 }
-
-@media screen and (min-width: 992px) {
+@media (min-width: 992px) {
+  form button:hover {
+    background-color: hsl(278deg, 94%, 30%);
+  }
+}
+@media (min-width: 992px) {
   form {
     width: 70%;
     height: 100%;
-    background-color: var(--White);
+    background-color: hsl(0deg, 0%, 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0 7em;
   }
-  form button:hover {
-    background-color: var(--Violet);
-  }
 }
+
 section {
   width: 100%;
   height: 200px;
@@ -177,12 +169,30 @@ section :nth-child(1) {
   top: 26%;
   right: -37%;
 }
+@media (min-width: 992px) {
+  section :nth-child(1) {
+    width: 205px;
+    height: 110px;
+    position: relative;
+    top: 50%;
+    right: -50%;
+  }
+}
 section :nth-child(2) {
   width: 205px;
   height: 110px;
   position: relative;
   top: 0;
   right: -4%;
+}
+@media (min-width: 992px) {
+  section :nth-child(2) {
+    width: 205px;
+    height: 110px;
+    position: relative;
+    top: 0%;
+    right: -25%;
+  }
 }
 section :nth-child(3) {
   width: 205px;
@@ -191,27 +201,7 @@ section :nth-child(3) {
   top: -57%;
   right: -4%;
 }
-
-@media screen and (min-width: 992px) {
-  section {
-    width: 30%;
-    height: 100%;
-    background: url("../images/bg-main-desktop.png") no-repeat;
-  }
-  section :nth-child(1) {
-    width: 205px;
-    height: 110px;
-    position: relative;
-    top: 50%;
-    right: -50%;
-  }
-  section :nth-child(2) {
-    width: 205px;
-    height: 110px;
-    position: relative;
-    top: 0%;
-    right: -25%;
-  }
+@media (min-width: 992px) {
   section :nth-child(3) {
     width: 205px;
     height: 110px;
@@ -220,10 +210,18 @@ section :nth-child(3) {
     right: -25%;
   }
 }
+@media (min-width: 992px) {
+  section {
+    width: 30%;
+    height: 100%;
+    background: url("../images/bg-main-desktop.png") no-repeat;
+  }
+}
+
 .success {
   width: 100%;
   height: 400px;
-  background-color: var(--White);
+  background-color: hsl(0deg, 0%, 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -237,21 +235,21 @@ section :nth-child(3) {
   margin: 0 0 2em 0;
 }
 .success h1 {
-  color: var(--DarkViolet);
+  color: hsl(278deg, 68%, 11%);
   font-size: 1.5rem;
   margin: 0 0 0.5em 0;
   letter-spacing: 2px;
 }
 .success p {
-  color: var(--DarkGray);
+  color: hsl(279deg, 6%, 55%);
 }
 .success button {
   width: 93%;
   height: 3em;
   border: none;
   border-radius: 8px;
-  background-color: var(--DarkViolet);
-  color: var(--White);
+  background-color: hsl(278deg, 68%, 11%);
+  color: hsl(0deg, 0%, 100%);
   font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 2px;
@@ -259,24 +257,27 @@ section :nth-child(3) {
   cursor: pointer;
 }
 .success button:hover {
-  background-color: var(--LightViolet);
+  background-color: hsl(249deg, 99%, 64%);
 }
-
-@media screen and (min-width: 992px) {
+@media (min-width: 992px) {
+  .success button:hover {
+    background-color: hsl(278deg, 94%, 30%);
+  }
+}
+@media (min-width: 992px) {
+  .success button {
+    width: 90%;
+  }
+}
+@media (min-width: 992px) {
   .success {
     width: 70%;
     height: 100%;
-    background-color: var(--White);
+    background-color: hsl(0deg, 0%, 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0 7em;
-  }
-  .success button {
-    width: 90%;
-  }
-  .success button:hover {
-    background-color: var(--Violet);
   }
 }
 

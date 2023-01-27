@@ -1,6 +1,5 @@
 @use "../abstracts" as *;
 
-// By default :
 body,
 html {
   font-family: $font;
@@ -12,9 +11,14 @@ html {
   justify-content: center;
   align-items: center;
   background-color: $light-violet;
+  @include medium {
+    background-color: $violet;
+  }
 }
-
 
 main {
   @include main-container(350px, 100%, column);
+  @include medium {
+    @include main-container(800px, 500px, row);
+  }
 }

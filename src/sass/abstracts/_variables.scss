@@ -9,3 +9,10 @@ $dark-gray: hsl(279, 6%, 55%);
 
 // Fonts: 
 $font: "Space Grotesk", sans-serif;
+
+// Breakpoints: 
+$breakpoints: ( 
+  "small": 350px,
+  'medium': 992px,
+  'large': 1440px,
+);

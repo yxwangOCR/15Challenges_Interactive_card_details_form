@@ -37,18 +37,15 @@
     );
     &:hover {
       background-color: $light-violet;
-    }
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .success {
-    @include form-container(70%, 100%, $white, column, center, 0 7em);
-    button {
-      width: 90%;
-      &:hover {
+      @include medium{
         background-color: $violet;
       }
     }
+    @include medium{
+      width: 90%;
+    }
+  }
+  @include medium{
+    @include form-container(70%, 100%, $white, column, center, 0 7em);
   }
 }
