@@ -2,7 +2,7 @@
 @use "../base" as *;
 
 .success {
-  @include form-container(100%, 400px, var(--White), column, center, 3em 0);
+  @include form-container(100%, 400px, $white, column, center, 3em 0);
   display: flex;
   align-items: center;
 
@@ -13,13 +13,13 @@
   }
 
   h1 {
-    color: var(--DarkViolet);
+    color: $dark-violet;
     font-size: 1.5rem;
     margin: 0 0 0.5em 0;
     letter-spacing: 2px;
   }
   p {
-    color: var(--DarkGray);
+    color: $dark-gray;
   }
   button {
     @include button-style(
@@ -27,8 +27,8 @@
       3em,
       none,
       8px,
-      var(--DarkViolet),
-      var(--White),
+      $dark-violet,
+      $white,
       0.8rem,
       500,
       2px,
@@ -36,18 +36,18 @@
       pointer
     );
     &:hover {
-      background-color: var(--LightViolet);
+      background-color: $light-violet;
     }
   }
 }
 
 @media screen and (min-width: 992px) {
   .success {
-    @include form-container(70%, 100%, var(--White), column, center, 0 7em);
+    @include form-container(70%, 100%, $white, column, center, 0 7em);
     button {
       width: 90%;
       &:hover {
-        background-color: var(--Violet);
+        background-color: $violet;
       }
     }
   }

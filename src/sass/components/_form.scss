@@ -2,7 +2,7 @@
 @use "../base" as *;
 
 form {
-  @include form-container(100%, 400px, var(--White), column, center, 3em 0);
+  @include form-container(100%, 400px, $white, column, center, 3em 0);
   
   div {
     display: flex;
@@ -11,26 +11,24 @@ form {
 
     label {
       font-size: 0.7rem;
-      color: var(--DarkViolet);
+      color: $dark-violet;
       margin: 0 1em 0.5em 1em;
     }
     input {
-      border: 1px solid var(--LightGray);
+      border: 1px solid $light-gray;
       border-radius: 8px;
       padding: 0.8em;
       margin: 0 1em;
      
       &::placeholder {
-        color: var(--LightGray);
+        color: $light-gray;
         letter-spacing: 1px;
       }
     }
     span {
-      color: var(--DarkViolet);
       font-size: 0.7rem;
       margin: 0.5em 1em 0 1em;
-      color: var(--Red);
-      
+      color: $red;
     }
   }
   .date-cvc {
@@ -60,8 +58,8 @@ form {
       3em,
       none,
       8px,
-      var(--DarkViolet),
-      var(--White),
+      $dark-violet,
+      $white,
       0.8rem,
       500,
       2px,
@@ -69,17 +67,17 @@ form {
       pointer
     );
     &:hover {
-      background-color: var(--LightViolet);
+      background-color: $light-violet;
     }
   }
 }
 
 @media screen and (min-width: 992px) {
   form {
-    @include form-container(70%, 100%, var(--White), column, center, 0 7em);
+    @include form-container(70%, 100%, $white, column, center, 0 7em);
     button {
       &:hover {
-        background-color: var(--Violet);
+        background-color: $violet;
       }
     }
   }

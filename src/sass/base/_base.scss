@@ -3,7 +3,7 @@
 // By default :
 body,
 html {
-  font-family: var(--Font);
+  font-family: $font;
   font-size: 18px;
   margin: 0;
   padding: 0;
@@ -11,7 +11,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--LightViolet);
+  background-color: $light-violet;
 }
 
 

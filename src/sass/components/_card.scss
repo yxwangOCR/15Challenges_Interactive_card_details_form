@@ -2,7 +2,7 @@
 @use "../base" as *;
 
 .card {
-  color: var(--White);
+  color: $white;
   .card__logo {
     @include card-position(30px, 16px, relative, 12%, -16px);
   }
